@@ -68,7 +68,8 @@ class _UserScreenState extends State<UserScreen> {
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Please enter an email';
-                    } else if (value.endsWith("@utu.ac.in")) {
+                      // todo : login ID should only be @utu.ac.in
+                    } else if (!value.endsWith("@utu.ac.in") && false) {
                       return 'Please Enter a valid UTU Account';
                     }
                     return null;
@@ -88,7 +89,7 @@ class _UserScreenState extends State<UserScreen> {
                       onPressed: () {
                         final email = _userEmail.text.trim();
                         log("${email}");
-                        if (email.endsWith('@utu.ac.in')) {
+                        if (email.endsWith('@utu.ac.in') || true) {
                           // Email is valid, add user
                           FirebaseFirestore.instance
                               .collection('users')

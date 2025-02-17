@@ -28,10 +28,10 @@ Future<void> main() async {
     // Mobile Firebase Initialization
     await Firebase.initializeApp(
       options: const FirebaseOptions(
-        apiKey: "AIzaSyDn4BG357OxFle4LbC_4ZOfs03szSTqCtk",
-        appId: "1:1075629369168:android:62fd22619ca4ea0fb52e55",
-        messagingSenderId: "1075629369168",
-        projectId: "flutter-application-2-df821",
+        apiKey: "AIzaSyD4-1mYYdWFtuMKLG8ofs5a3C-xgwLaqBw",
+        appId: "1:58816975422:android:2ac87b83fa5bc4c138f76f",
+        messagingSenderId: "58816975422",
+        projectId: "todo-list-387f6",
       ),
     );
   }
@@ -74,6 +74,11 @@ class _MyAppState extends State<MyApp> {
           validUsername = value[0]['id'];
           validPassword = value[0]['pass'];
         }
+      },
+    ).whenComplete(
+      () {
+        log("ADMIN ID : $validUsername");
+        log("ADMIN PASS : $validPassword");
       },
     );
     super.initState();
